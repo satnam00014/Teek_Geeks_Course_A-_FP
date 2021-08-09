@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Georgia, serif, sans-serif;
+}
+body {
+  background: #fff;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1;
+  margin: 0;
+  min-width: 960px;
+  padding: 0;
+  background: linear-gradient(45deg, #ffffff, #0c6af7);
+  color: white;
+}
+p {
+  color: rgb(0, 18, 97);
+  line-height: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+p a {
+  color: #252525;
+  text-decoration: underline;
+}
+p a:hover {
+  color: #898989;
+}
+.first-parg-box {
+  border-style: solid;
+  background: linear-gradient(45deg, #ffffff, #0c6af7);
+  border-radius: 5%;
+  box-shadow: 0 5px 8px 0 #7c7c7c, 0 10px 17px 0 #7c7c7c;
+  transition: 0.3s;
+}
+
+.second-parg-box {
+  border-style: solid;
+  background: linear-gradient(45deg, #ffffff, #0c6af7);
+  border-radius: 10px;
+  box-shadow: 0 5px 8px 0 #7c7c7c, 0 10px 17px 0 #7c7c7c;
+  transition: 0.3s;
+  margin-top: 3%;
+}
+.second-parg-box div ul {
+  margin-left: 8%;
+  margin-top: -4%;
+  color: black;
+}
+
+.thirt-parg-box {
+  border-style: solid;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #ffffff, #0c6af7);
+  box-shadow: 0 5px 8px 0 #7c7c7c, 0 10px 17px 0 #7c7c7c;
+  transition: 0.3s;
+  margin-top: 3%;
+}
