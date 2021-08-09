@@ -60,3 +60,242 @@ p a:hover {
   transition: 0.3s;
   margin-top: 3%;
 }
+
+#header {
+  margin: 0 auto;
+  padding: 44px 0 50px;
+  text-align: center;
+  width: 960px;
+}
+#header a.logo {
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  width: 340px;
+}
+
+#header ul {
+  margin: 0;
+  padding: 56px 0 0;
+}
+#header ul li {
+  display: inline;
+  list-style: none;
+  margin: 0;
+  padding: 0 19px;
+}
+#header ul li a {
+  color: #252525;
+  display: inline-block;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0 0 3px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+#header ul li a:hover,
+#header ul li.selected a {
+  color: #0ba39c;
+}
+#body {
+  margin: 2%;
+  padding: 0 0 30px;
+}
+
+#body h1 {
+  color: #fff;
+  display: inline;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 35px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+#body > div {
+  margin: 0 auto;
+  padding: 0;
+  width: 960px;
+}
+
+#body > div .article {
+  margin: 0 auto;
+  padding: 30px 30px 0;
+  width: 560px;
+}
+#body > div .article h2 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 25px;
+  font-weight: normal;
+  margin: 0 0 30px;
+}
+#body > div .article h3 {
+  color: rgb(0, 0, 0);
+  line-height: 15%;
+  padding: 0;
+  font-size: 145%;
+  font-weight: bold;
+  text-align: center;
+  margin: 5%;
+}
+#body > div .article h4 {
+  background: #252525;
+  color: #fff;
+  display: inline-block;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 25px;
+  font-weight: normal;
+  margin: 0 0 30px;
+  padding: 8px 27px 10px;
+}
+#body > div .article p {
+  margin: 1% 2% 5%;
+}
+
+#body div ul li div {
+  float: left;
+  margin: 0;
+  padding: 63px 0 20px;
+  width: 558px;
+}
+#body div ul li div h3 {
+  color: #252525;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 25px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+#body div ul li div p {
+  padding: 30px 30px 18px;
+}
+#body div ul li div a.more {
+  background: #000;
+  color: #fff;
+  display: inline-block;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0;
+  padding: 8px 28px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+#body div ul li div a.more:hover {
+  color: #252525;
+  background: #fff;
+  border: 2px solid #252525;
+}
+
+#body > ul {
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 24px 0 0;
+  width: 960px;
+}
+#body > ul li {
+  display: block;
+  float: left;
+  margin: 0 10px 20px;
+  padding: 0;
+  width: 300px;
+}
+#body > ul li a {
+  color: #000;
+  display: block;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 20px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+#footer {
+  background: #5291f0;
+  margin: 0;
+  padding: 36px 0 42px;
+}
+#footer div {
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 0;
+  width: 960px;
+}
+#footer div p {
+  color: #fff;
+  float: left;
+  line-height: 44px;
+  margin: 0 0 0 35%;
+  padding: 0;
+}
+#footer div ul {
+  display: block;
+  float: right;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  width: 256px;
+}
+#footer div ul li {
+  display: block;
+  float: left;
+  list-style: none;
+  margin: 0 10px;
+  padding: 0;
+  width: 44px;
+}
+#footer div ul li a {
+  display: block;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  text-indent: -99999px;
+  width: 44px;
+}
+.navbar {
+  box-sizing: border-box;
+}
+nav {
+  background: cornflowerblue;
+  height: 80px;
+}
+label.logo {
+  color: white;
+  font-size: 2em;
+  line-height: 80px;
+  padding: 0 100px;
+  font-weight: bold;
+}
+nav ul {
+  list-style: none;
+  float: right;
+  margin-right: 20px;
+}
+nav ul li {
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  padding: 7px 14px;
+  border-radius: 3px;
+  font-size: 17px;
+  text-transform: uppercase;
+}
+a.active,
+a:hover {
+  background: rgb(57, 119, 233);
+  transition: 0.5s;
+}
+#check {
+  display: none;
+}
