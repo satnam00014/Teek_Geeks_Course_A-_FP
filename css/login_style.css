@@ -5,7 +5,7 @@
     font-family: sans-serif;
 }
 body{
-    background: linear-gradient(45deg,#ffffff,#eb799f);
+    background: linear-gradient(45deg,#ffffff,#3977e9);
     background-attachment: fixed;
 }
 section{
@@ -32,7 +32,7 @@ section .ImageBox::before{
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(225deg,#e91e63,#03a9f4);
+    background: linear-gradient(225deg,#3977e9,#03a9f4);
     z-index: 1;
     mix-blend-mode: screen;
 }
@@ -45,13 +45,14 @@ section .ImageBox img{
     object-fit: cover;
 }
 section .ContentBox{
-    display: flex;
+    display: inline-block;
     width: 50%;
     height: 100%;
-    justify-content: center;
-    align-items: center;
 }
 section .ContentBox .FormBox{
+    margin-top: 5em;
+    margin-left: auto;
+    margin-right: auto;
     padding: 40px;
     border-radius: 10px;
     box-shadow:0 2px 5px 0 rgba(0,0,0,0.25),0 2px 10px 0 rgba(0,0,0,0.25);
@@ -65,7 +66,7 @@ section .ContentBox .FormBox h2{
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 20px;
-    border-bottom: 4px solid #e91e63;
+    border-bottom: 4px solid #3977e9;
     letter-spacing: 1px;
 }
 section .ContentBox .FormBox .FormInputBox{
@@ -93,7 +94,7 @@ section .ContentBox .FormBox .FormInputBox input{
     border-radius: 30px;
 }
 section .ContentBox .FormBox .FormInputBox input[type="submit"]{
-    background: #ff458f;
+    background: #3977e9;
     color: white;
     outline: none;
     border: none;
@@ -101,16 +102,16 @@ section .ContentBox .FormBox .FormInputBox input[type="submit"]{
     cursor: pointer;
 }
 section .ContentBox .FormBox .FormInputBox input[type="submit"]:hover{
-    background: #f5307f;
+    background: #2e60bd;
 }
 section .ContentBox .FormBox .FormInputBox p{
     color: darkslategrey;
 }
 section .ContentBox .FormBox .FormInputBox p a{
-    color: #ff458f;
+    color: #3977e9;
 }
 section .ContentBox .FormBox .FormInputBox p a:hover{
-    color: #f5307f;
+    color: #2e60bd;
 }
 @media screen and (max-width:1000px) {
     section .ContentBox .FormBox{
