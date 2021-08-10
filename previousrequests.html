@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <link rel = "stylesheet" href="user_requests.css">
+        <link rel="stylesheet" href="navbar.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script text="text/javascript">
+            const id = sessionStorage.getItem("id")
+            if(id == null || id === ""){
+                window.open("login.html","_self")
+                alert("please login first")
+            }else{
+                //prefixes of implementation that we want to test
+                window.indexedDB = window.indexedDB || window.mozIndexedDB || 
+                window.webkitIndexedDB || window.msIndexedDB;
+                
+                //prefixes of window.IDB objects
+                window.IDBTransaction = window.IDBTransaction || 
+                window.webkitIDBTransaction || window.msIDBTransaction;
+                window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange || 
+                window.msIDBKeyRange
+                
+                if (!window.indexedDB) {
+                    window.alert("Your browser doesn't support a stable version of IndexedDB.")
+                }
+
+                var db;
+                var request = window.indexedDB.open("userDatabase", 3);
+                
+                request.onerror = function(event) {
+                    console.log("error: ");
+                };
+                
+                request.onsuccess = function(event) {
+                    db = request.result;
+                    console.log("success: "+ db);
+                    var objectStore = db.transaction("userData").objectStore("userData");
+                    var outputValue = "" 
+                    objectStore.openCursor().onsuccess = function(event) {
+                        var cursor = event.target.result;
+                        if (cursor) {
+                            if(cursor.value.keydata === id){
+                                outputValue = outputValue + '<div class="OutputBox">'
+                                    +"<h3>Requested</h3>"+"<br>"
+                                    +"First Name: " + cursor.value.firstname + "<br>"
+                                    +"Last Name: " + cursor.value.lastname + "<br>" 
+                                    +"Father's Name: " + cursor.value.fathername + "<br>"
+                                    +"Mother's Name: " + cursor.value.mothername + "<br>" 
+                                    +"Email: " + cursor.value.email + "<br>"
+                                    +"Date Of Birth: " + cursor.value.dob + "<br>" 
+                                    +"Gender: " + cursor.value.gender + "<br>"
+                                    +"Address: " + cursor.value.address + "<br>" 
+                                    +"Previous College: " + cursor.value.college + "<br>"
+                                    +"Previous Marks: " + cursor.value.marks + "<br>" 
+                                    +"Course Requested: " + cursor.value.course + "<br>"
+                                    +"Intake Requested: " + cursor.value.intake + "<br>" 
+                                    +"</div>"                                 
+                                console.log(outputValue)
+                                document.getElementById("result").innerHTML = outputValue  
+                            }
+                            cursor.continue();
+                        }   
+                    }
+                };
+                
+                request.onupgradeneeded = function(event) {
+                    var db = event.target.result;
+                    var objectStore = db.createObjectStore("userData", { keyPath: "id", autoIncrement:true });
+                }
+                
+                function signout(){
+                    sessionStorage.removeItem("id")
+                    window.open("login.html","_self")
+                }
+            }
+        </script>
+    </head>
+    <body id="mainbody">
+        <div class="navbar">
+            <nav>
+                <input type="checkbox" id="check" onclick="preventScroll()">
+                <label for="check" class="checkbtn">
+                    <i class="fas fa-bars"></i>
+                </label>
+                <label class="logo">sample home</label>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="LinkBox">
+            <a href="requestcourse.html">Request for Course</a>
+            <a href="login.html" onclick="signout()">Sign-Out</a>
+        </div>
+        <div id="result">
+            <div class="OutputBox">
+                <h1>No Previous request</h1>
+            </div>
+        </div>
+        
+    </body>
+    <footer>
+        &copy; Copyright 2021. All Rights reserved. <br />
+        <script>
+            const navButton = document.getElementById("check");
+            const body = document.getElementById("mainbody");
+    
+            const preventScroll = function (e) {
+                console.log("This is sample")
+                console.log(navButton.checked)
+                if (navButton.checked) {
+                    // Disable scroll
+                    body.style.overflow = "hidden";
+                    body.style.position = "fixed";
+                } else {
+                    // Enable scroll
+                    body.style.overflow = "auto";
+                    body.style.position = "static";
+                }
+            };
+        </script>
+    </footer>
+</html>
