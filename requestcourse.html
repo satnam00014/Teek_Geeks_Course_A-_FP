@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <link rel = "stylesheet" href="user_requests.css">
+        <link rel="stylesheet" href="navbar.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script text="text/javascript">
+            const id = sessionStorage.getItem("id")
+            if(id == null || id === ""){
+                window.open("login.html","_self")
+                alert("please login first")
+            }else{
+                //prefixes of implementation that we want to test
+                window.indexedDB = window.indexedDB || window.mozIndexedDB || 
+                window.webkitIndexedDB || window.msIndexedDB;
+                
+                //prefixes of window.IDB objects
+                window.IDBTransaction = window.IDBTransaction || 
+                window.webkitIDBTransaction || window.msIDBTransaction;
+                window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange || 
+                window.msIDBKeyRange
+                
+                if (!window.indexedDB) {
+                    window.alert("Your browser doesn't support a stable version of IndexedDB.")
+                }
+
+                var db;
+                var request = window.indexedDB.open("userDatabase", 3);
+                
+                request.onerror = function(event) {
+                    console.log("error: ");
+                };
+                
+                request.onsuccess = function(event) {
+                    db = request.result;
+                    console.log("success: "+ db);
+                    var objectStore = db.transaction("userData").objectStore("userData");
+                    var outputValue = "" 
+                    objectStore.openCursor().onsuccess = function(event) {
+                        var cursor = event.target.result;
+                        if (cursor) {
+                            if(cursor.value.keydata === id){
+                                outputValue = outputValue + "Fathername for student " + cursor.value.firstname + " is " + cursor.value.fathername + "<br>"                                  
+                                console.log(outputValue)
+                                document.getElementById("result").innerHTML = outputValue  
+                            }
+                            cursor.continue();
+                        }   
+                    }
+                };
+                
+                request.onupgradeneeded = function(event) {
+                    var db = event.target.result;
+                    var objectStore = db.createObjectStore("userData", { keyPath: "id", autoIncrement:true });
+                }
+                
+                function signout(){
+                    sessionStorage.removeItem("id")
+                    window.open("login.html","_self")
+                }
+
+                function readAll() {
+                    var objectStore = db.transaction("userData").objectStore("userData");
+                    var outputValue = "" 
+                    objectStore.openCursor().onsuccess = function(event) {
+                        var cursor = event.target.result;
+                        if (cursor) {
+                            if(cursor.value.keydata === id){
+                                outputValue = outputValue + "Fathername for student " + cursor.value.firstname + " is " + cursor.value.fathername + "<br>"                                  
+                                document.getElementById("result").innerHTML = outputValue  
+                            }
+                            cursor.continue();
+                        } 
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="navbar">
+            <nav>
+                <input type="checkbox" id="check">
+                <label for="check" class="checkbtn">
+                    <i class="fas fa-bars"></i>
+                </label>
+                <label class="logo">sample home</label>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="LinkBox">
+            <a href="previousrequests.html">Previous Requests</a>
+            <a href="login.html" onclick="signout()">Sign-Out</a>
+        </div>
+        <div class="FormBox">
+            <h2>Requesting Course</h2>
+            <form id="form">
+                <div class="FormInputBox">
+                    <label for="firstname">First Name</label>
+                    <input id="firstname" type="text" name="firstname" placeholder="Enter firstname" required>
+                </div>
+                <div class="FormInputBox">
+                    <label for="lastname">Last Name</label>
+                    <input id="lastname" type="text" name="lastname" placeholder="Enter lastname" required>
+                </div>
+                <div class="FormInputBox">
+                    <label for="fathername">Father's Name</label>
+                    <input id="fathername" type="text" name="fathername" placeholder="Enter fathername" required>
+                </div>
+                <div class="FormInputBox">
+                    <label for="mothername">Mother's Name</label>
+                    <input id="mothername" type="text" name="mothername" placeholder="Enter mothername" required>
+                </div>
+                <div class="FormInputBox">
+                    <label for="email">Email: </label>
+                    <input id="email" type="email" name="email" placeholder="Enter email" required>
+                </div>
+                <div class="FormInputBox">
+                    <label for="dob">Date of Birth</label>
+                    <input id="dob" type="date" name="dob" min="1980-01-01" max="2002-01-01" required>
+                </div>
+                <div class="FormInputRadioBox">
+                    <label for="gender"><span>Gender: </span></label>
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female" required>
+                    <label for="female">Female</label>
+                </div>
+                <div class="FormInputBox">
+                    <label for="address">Address</label><br>
+                    <textarea id="address" type="text" name="address" rows="6" required></textarea>
+                </div>
+                <div class="FormInputBox">
+                    <label for="previouscollege">Name of previous college</label>
+                    <input id="previouscollege" type="text" name="previouscollege" placeholder="Recent institute" required>
+                </div>
+                <div class="FormInputBox">
+                    <label for="previousmarks">Marks from previous course (0-100)</label>
+                    <input id="previousmarks" type="number" name="previousmarks" placeholder="Marks in %" min="0" max="100" required>
+                </div>
+                <div class="FormInputBox">
+                    <label for="course">Choose a Course:</label>
+                    <select id="course" name="course">
+                        <option value="Java Programming">Java Programming</option>
+                        <option value="iOS Development">iOS Development</option>
+                        <option value="Swift Programming">Swift Programming</option>
+                        <option value="Android Development">Android Development</option>
+                        <option value="Database with PHP">Database with PHP</option>
+                        <option value="Mobile Application Development">Mobile Application Development</option>
+                        <option value="Mobile Browser Application Development">Mobile Browser Application Development</option>
+                        <option value="Co-op preparation">Co-op preparation</option>
+                        <option value="Capstone Project">Capstone Project</option>
+                        <option value="Javascript Programming">Javascript Programming</option>
+                    </select>
+                </div>
+                <div class="FormInputBox">
+                    <label for="intake">Choose an intake:</label>
+                    <select id="intake" name="intake">
+                        <option value="January 2022">January 2022</option>
+                        <option value="May 2022">May 2022</option>
+                        <option value="September 2022">September 2022</option>
+                    </select>
+                </div>
+                <div class="FormInputRadioBox">
+                    <input type="checkbox" id="terms" name="terms" value="terms" required>
+                    <label for="terms">I am sure that values in above form are true to my knowledge.</label>
+                </div>
+                <div class="FormInputBox">
+                    <input type="submit" value="Submit" name="Submit">
+                </div>
+                <div class="FormInputBox">
+                    <input type="reset" value="Clear" name="Clear">
+                </div>
+                <div id="result"></div>
+            </form>
+        </div>
+    </body>
+    <footer>
+        &copy; Copyright 2021. All Rights reserved. <br />
+        <script>
+            const firstname = document.getElementById('firstname')
+            const lastname = document.getElementById('lastname')
+            const fathername = document.getElementById('fathername')
+            const mothername = document.getElementById('mothername')
+            const email = document.getElementById('email')
+            const dob = document.getElementById('dob')
+            const gender = document.getElementsByName('gender')
+            const address = document.getElementById('address')
+            const college = document.getElementById('previouscollege')
+            const marks = document.getElementById('previousmarks')
+            const course = document.getElementById('course')
+            const intake = document.getElementById('intake')
+            const form = document.getElementById('form')
+            var output = document.getElementById('result')
+            form.addEventListener('submit', (e) => {
+                e.preventDefault()
+                var genderValue = ''
+                for(i=0;i<gender.length;i++){
+                    if(gender[i].checked){
+                        genderValue = gender[i].value
+                    }
+                }
+                const v_firstname = firstname.value
+                const v_lastname = lastname.value
+                const v_fathername = fathername.value
+                const v_mothername = mothername.value
+                const v_email = email.value
+                const v_dob = dob.value
+                const v_address = address.value
+                const v_college = college.value
+                const v_marks = marks.value
+                const v_course = course.value
+                const v_intake = intake.value
+                const data = {
+                    keydata : id,
+                    firstname : v_firstname,
+                    lastname : v_lastname,
+                    fathername : v_fathername,
+                    mothername : v_mothername,
+                    email : v_email,
+                    dob : v_dob,
+                    gender : genderValue,
+                    address : v_address,
+                    college : v_college,
+                    marks : v_marks,
+                    course : v_course,
+                    intake : v_intake,
+                }
+                var request = db.transaction(["userData"], "readwrite")
+                .objectStore("userData")
+                .add(data);
+                
+                request.onsuccess = function(event) {
+                    readAll()
+                }
+
+                request.onerror = function(event) {
+                    alert("Unable to add data\r\nthis user is aready exist in your database! ");
+                }
+                firstname.value = null
+                lastname.value = null
+                fathername.value = null
+                mothername.value = null
+                email.value = null
+                dob.value = null
+                address.value = null
+                college.value = null
+                marks.value = null
+                course.value = null
+            })
+        </script>   
+    </footer>
+</html>
