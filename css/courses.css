@@ -230,3 +230,57 @@ footer {
   color: white;
   text-align: center;
 }
+
+@media screen and (max-width: 1024px) {
+  .card-detail ol li {
+    display: block;
+  }
+  .card-title-one {
+    margin-top: 3%;
+    margin-left: 2%;
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
+  .card-title-one {
+    width: 207%;
+    border: 1px solid #d1d1d1;
+    float: left;
+    margin-top: 4%;
+    height: 21%;
+    border-radius: 10px;
+    font-size: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .card-title-two {
+    display: none;
+  }
+  .card-detail-two {
+    width: 100%;
+    border: 1px solid #d1d1d1;
+    float: left;
+    margin-top: -50%;
+    height: 220px;
+    border-radius: 10px;
+    box-sizing: border-box;
+  }
+  .card-text-box {
+    width: 48%;
+    height: 176px;
+    float: left;
+    border-radius: 10px;
+  }
+
+  .card-image-box {
+    width: 100%;
+    border: 1px solid #d1d1d1;
+    height: 180px;
+    border-radius: 10px;
+    float: left;
+    margin-right: 2%;
+  }
+  footer {
+    display: none;
+  }
+}
