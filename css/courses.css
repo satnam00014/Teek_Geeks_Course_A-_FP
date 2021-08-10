@@ -284,3 +284,52 @@ footer {
     display: none;
   }
 }
+
+@media screen and (max-width: 973px) {
+  .course-list {
+    display: none;
+  }
+  .course-box-right-card {
+    display: none;
+  }
+  .course-list {
+    display: none;
+  }
+  section {
+    position: fixed;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    bottom: 0px;
+    padding: 20% 5% 5% 11%;
+    z-index: -1;
+  }
+  footer {
+    display: none;
+  }
+  .card-detail-two {
+    width: 97%;
+    border: 1px solid #d1d1d1;
+    float: left;
+    margin-top: -50%;
+    height: 47%;
+    border-radius: 10px;
+    font-size: 75%;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+  }
+
+  .course-box-left-card {
+    float: left;
+    width: 100%;
+    border: 1px solid #9e5260;
+    height: 460px;
+    border-radius: 8px;
+    background: #fff;
+    margin-right: 2%;
+    box-sizing: border-box;
+    padding: 2% 2%;
+    position: relative;
+  }
+}
