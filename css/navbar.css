@@ -65,6 +65,9 @@ a:hover {
 }
 
 @media screen and (max-width: 900px) {
+  nav .checkbtn{
+    display: block;
+}
   ul {
     z-index: 1;
     position: fixed;
