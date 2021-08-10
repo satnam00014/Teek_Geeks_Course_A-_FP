@@ -230,7 +230,6 @@ footer {
   color: white;
   text-align: center;
 }
-
 @media screen and (max-width: 1024px) {
   .card-detail ol li {
     display: block;
@@ -284,7 +283,6 @@ footer {
     display: none;
   }
 }
-
 @media screen and (max-width: 973px) {
   .course-list {
     display: none;
@@ -333,7 +331,6 @@ footer {
     position: relative;
   }
 }
-
 @media screen and (max-width: 600px) {
   .course-box-right-card {
     display: none;
@@ -421,6 +418,45 @@ footer {
     margin-bottom: 20%;
   }
   footer {
+    display: none;
+  }
+}
+@media screen and (max-width: 315px) {
+  .card-title-two {
+    display: none;
+  }
+  .card-title-one {
+    display: none;
+  }
+  .card-detail-two {
+    width: 97%;
+    border: 1px solid #d1d1d1;
+    float: left;
+    margin-top: -79%;
+    height: 60%;
+    border-radius: 10px;
+    font-size: 65%;
+    box-sizing: border-box;
+  }
+  .card-text-box {
+    width: 48%;
+    height: 40%;
+    float: left;
+    border-radius: 10px;
+    margin-bottom: 3%;
+  }
+  footer {
+    display: none;
+  }
+}
+@media screen and (max-width: 230px) {
+  .course-detail-box {
+    display: none;
+  }
+  .course-container {
+    display: none;
+  }
+  .navbar {
     display: none;
   }
 }
