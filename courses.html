@@ -456,3 +456,32 @@
 		&Topf;&amp;&Gopf; Copyright 2020. All Rights reserved. <br />
 	</footer>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+
+    $(document).ready(function () {
+
+
+        $('.course-list ul li a').click(function (event) {
+
+            var index = $(this).parent('li').index();
+            var height = 500;
+
+            height = height * index;
+            if (index == 0) {
+                height = 0;
+            }
+
+
+            $('html , body .course-container').animate({
+                scrollTop: height
+            }, 1000);
+
+            return false;
+
+        });
+
+    });
+
+</script>
