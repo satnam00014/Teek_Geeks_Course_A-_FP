@@ -6,7 +6,7 @@
 }
 
 body{
-    background: linear-gradient(45deg,#ffffff,#eb799f);
+    background: linear-gradient(45deg,#ffffff,#3977e9);
     background-attachment: fixed;
 }
 .FormBox{
@@ -27,7 +27,7 @@ body{
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 20px;
-    border-bottom: 4px solid #e91e63;
+    border-bottom: 4px solid #3977e9;
     letter-spacing: 1px;
 }
 .FormBox .FormInputBox, .FormInputRadioBox{
@@ -46,7 +46,7 @@ body{
     border-radius: 30px;
 }
 .FormBox .FormInputBox input[type="submit"]{
-    background: #ff458f;
+    background: #3977e9;
     width: 80%;
     color: white;
     outline: none;
@@ -57,7 +57,7 @@ body{
     margin: 0px auto;
 }
 .FormBox .FormInputBox input[type="submit"]:hover{
-    background: #f5307f;
+    background: #2e60bd;
 }
 .FormBox .FormInputBox input[type="reset"]{
     background: #34c494;
@@ -81,7 +81,7 @@ body{
     margin: 1em;
     background-color: white;
     color: black;
-    border: 2px solid #f5307f;
+    border: 2px solid #3977e9;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -90,7 +90,7 @@ body{
 }
 .LinkBox a:hover{
     color: white;
-    background-color: #f5307f;
+    background-color: #3977e9;
 }
 .OutputBox{
     padding: 1em;
