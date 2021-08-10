@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+        <title>Signup</title>
+        <link rel = "stylesheet" href="signup_style.css">
+        <link rel="stylesheet" href="navbar.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script type = "text/javascript">
+         
+            //prefixes of implementation that we want to test
+            window.indexedDB = window.indexedDB || window.mozIndexedDB || 
+            window.webkitIndexedDB || window.msIndexedDB;
+            
+            //prefixes of window.IDB objects
+            window.IDBTransaction = window.IDBTransaction || 
+            window.webkitIDBTransaction || window.msIDBTransaction;
+            window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange || 
+            window.msIDBKeyRange
+            
+            if (!window.indexedDB) {
+               window.alert("Your browser doesn't support a stable version of IndexedDB.")
+            }
+            
+            const userData = [
+               { id: "satnam", password: "singh"},
+               { id: "singh", password: "singh"}
+            ];
+            var db;
+            var request = window.indexedDB.open("userDatabase", 3);
+            
+            request.onerror = function(event) {
+               console.log("error: ");
+            };
+            
+            request.onsuccess = function(event) {
+               db = request.result;
+               console.log("success: "+ db);
+            };
+            
+            request.onupgradeneeded = function(event) {
+               var db = event.target.result;
+               var objectStore = db.createObjectStore("users", {keyPath: "id"});
+               
+               for (var i in userData) {
+                  objectStore.add(userData[i]);
+               }
+            }
+            function add() {
+               var request = db.transaction(["users"], "readwrite")
+               .objectStore("users")
+               .add({ id: "amarjot", password: "singh"});
+               
+               request.onsuccess = function(event) {
+                  alert("user has been added to your database.");
+               };
+               
+               request.onerror = function(event) {
+                  alert("Unable to add data\r\nthis user is aready exist in your database! ");
+               }
+            }
+         </script>
+    </head>
+    <body>
+        <div class="navbar">
+            <nav>
+                <input type="checkbox" id="check">
+                <label for="check" class="checkbtn">
+                    <i class="fas fa-bars"></i>
+                </label>
+                <label class="logo">sample home</label>
+                <ul>
+                    <li><a class = "active" href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+        <section>
+           <div class="ImageBox">
+            <img src="background_signup.jpg">
+           </div>
+           <div class="ContentBox">
+            <div class="FormBox">
+                <div id="output"></div>
+                <h2>Sign-up</h2>
+                <form id="form">
+                    <div class="FormInputBox">
+                        <span>Username</span>
+                        <input id="username" type="text" name="username" minlength="3" placeholder="Enter username" required>
+                    </div>
+                    <div class="FormInputBox">
+                        <span>Password</span>
+                        <input id="password1" type="password" name="password1" minlength="4" placeholder="Password" required>
+                    </div>
+                    <div class="FormInputBox">
+                        <span>Re-Enter Password</span>
+                        <input id="password2" type="password" name="password2" minlength="4" placeholder="Password" required>
+                    </div>
+                    <div class="FormInputBox">
+                        <input type="submit" value="Signup" name="signup">
+                    </div>
+                    <div class="FormInputBox">
+                        <p>Already have an account? <a href="login.html">signin</a></p>
+                    </div>
+                </form>
+            </div>
+           </div>
+        </section>
+    </body>
+    <footer style="z-index: 2;position: fixed;">
+        &copy; Copyright 2021. All Rights reserved. <br />
+        <script>
+            const name = document.getElementById('username')
+            const password1 = document.getElementById('password1')
+            const password2 = document.getElementById('password2')
+            const form = document.getElementById('form')
+            var output = document.getElementById('output')
+            form.addEventListener('submit', (e) => {
+                e.preventDefault()
+                const user = name.value
+                const pass1 = password1.value
+                const pass2 = password2.value
+                if (pass1 === pass2){
+                    var request = db.transaction(["users"], "readwrite")
+                    .objectStore("users")
+                    .add({ id: user, password: pass1});
+                    
+                    request.onsuccess = function(event) {
+                        output.innerHTML = "Account Created!!"
+                        output.style.color = "green"
+                        output.style.marginLeft = "auto"
+                        output.style.marginRight = "auto"
+                        output.style.fontSize = "1.5em"
+                    };
+                    
+                    request.onerror = function(event) {
+                        output.innerHTML = "User already exist!!"
+                        output.style.color = "red"
+                        output.style.marginLeft = "auto"
+                        output.style.marginRight = "auto"
+                        output.style.fontSize = "1.5em"
+                    }
+                    name.value = null
+                    password1.value = null
+                    password2.value = null
+                
+                }else{
+                    output.innerHTML = "Both passwords should be same"
+                    output.style.color = "red"
+                    output.style.marginLeft = "auto"
+                    output.style.marginRight = "auto"
+                    output.style.fontSize = "1.5em"
+                }
+            })
+        </script>
+    </footer>
+</html>
