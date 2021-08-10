@@ -5,7 +5,7 @@
     font-family: sans-serif;
 }
 body{
-    background: linear-gradient(45deg,#ffffff,#eb799f);
+    background: linear-gradient(45deg,#ffffff,#3977e9);
     background-attachment: fixed;
 }
 section{
@@ -31,7 +31,7 @@ section .ImageBox::before{
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(225deg,#e91e63,#03a9f4);
+    background: linear-gradient(225deg,#3977e9,#03a9f4);
     z-index: 1;
     mix-blend-mode: screen;
 }
@@ -65,7 +65,7 @@ section .ContentBox .FormBox h2{
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 20px;
-    border-bottom: 4px solid #e91e63;
+    border-bottom: 4px solid #3977e9;
     letter-spacing: 1px;
 }
 section .ContentBox .FormBox .FormInputBox{
@@ -93,7 +93,7 @@ section .ContentBox .FormBox .FormInputBox input{
     border-radius: 30px;
 }
 section .ContentBox .FormBox .FormInputBox input[type="submit"]{
-    background: #ff458f;
+    background: #3977e9;
     color: white;
     outline: none;
     border: none;
@@ -101,17 +101,16 @@ section .ContentBox .FormBox .FormInputBox input[type="submit"]{
     cursor: pointer;
 }
 section .ContentBox .FormBox .FormInputBox input[type="submit"]:hover{
-    background: #f5307f;
+    background: #2e60bd;
 }
 section .ContentBox .FormBox .FormInputBox p{
     color: darkslategrey;
 }
 section .ContentBox .FormBox .FormInputBox p a{
-    color: #ff458f;
+    color: #3977e9;
 }
 section .ContentBox .FormBox .FormInputBox p a:hover{
-    color: #f5307f;
-    background-color: white;
+    color: #2e60bd;
 }
 @media screen and (max-width:1000px) {
     section .ContentBox .FormBox{
