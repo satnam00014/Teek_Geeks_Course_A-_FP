@@ -72,6 +72,7 @@ footer {
   color: white;
   text-align: center;
 }
+
 @media screen and (max-width: 1165px) {
   .container h2 {
     text-align: center;
