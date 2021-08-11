@@ -536,12 +536,16 @@ a:hover {
     box-shadow: none;
     background: none;
   }
+  .second-parg-box ul {
+    display: none;
+  }
   .thirt-parg-box {
     margin-top: 3%;
     border-style: none;
     box-shadow: none;
     background: none;
   }
+
   #body > div .article {
     padding: 0;
     width: 50%;
@@ -562,25 +566,5 @@ a:hover {
   #footer {
     background: #5291f0;
     padding: 2% 3% 3%;
-  }
-  .first-parg-box {
-    margin-top: 3%;
-    border-style: none;
-    box-shadow: none;
-  }
-  .second-parg-box {
-    margin-top: 3%;
-    border-style: none;
-    box-shadow: none;
-  }
-  .thirt-parg-box {
-    margin-top: 3%;
-    border-style: none;
-    box-shadow: none;
-  }
-  .fourth-parg-box {
-    margin-top: 3%;
-    border-style: none;
-    box-shadow: none;
   }
 }
