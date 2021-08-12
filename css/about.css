@@ -33,7 +33,7 @@ p a:hover {
 .first-parg-box {
   border-style: solid;
   background: linear-gradient(45deg, #ffffff, #0c6af7);
-  border-radius: 5%;
+  border-radius: 10px;
   box-shadow: 0 5px 8px 0 #7c7c7c, 0 10px 17px 0 #7c7c7c;
   transition: 0.3s;
 }
@@ -124,7 +124,7 @@ p a:hover {
 #body > div .article {
   margin: 0 auto;
   padding: 30px 30px 0;
-  width: 560px;
+  width: 100%;
 }
 #body > div .article h2 {
   font-family: Georgia, "Times New Roman", Times, serif;
@@ -172,49 +172,6 @@ p a:hover {
 }
 #body div ul li div p {
   padding: 30px 30px 18px;
-}
-#body div ul li div a.more {
-  background: #000;
-  color: #fff;
-  display: inline-block;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 18px;
-  font-weight: normal;
-  margin: 0;
-  padding: 8px 28px;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-#body div ul li div a.more:hover {
-  color: #252525;
-  background: #fff;
-  border: 2px solid #252525;
-}
-
-#body > ul {
-  margin: 0 auto;
-  overflow: hidden;
-  padding: 24px 0 0;
-  width: 960px;
-}
-#body > ul li {
-  display: block;
-  float: left;
-  margin: 0 10px 20px;
-  padding: 0;
-  width: 300px;
-}
-#body > ul li a {
-  color: #000;
-  display: block;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 20px;
-  font-weight: normal;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
 }
 
 #footer {
@@ -359,7 +316,7 @@ a:hover {
   }
 }
 
-@media screen and (max-width: 685px) {
+@media only screen and (max-width: 960px) {
   body {
     min-width: 0;
   }
@@ -523,27 +480,27 @@ a:hover {
     width: 256px;
   }
 }
-@media screen and (max-width: 1024px) {
+@media only screen and (max-width: 1218px) {
   .first-parg-box {
     margin-top: 3%;
-    border-style: none;
-    box-shadow: none;
-    background: none;
+    padding: 10%;
+    width: 176%;
+    border-radius: 10px;
   }
   .second-parg-box {
     margin-top: 3%;
-    border-style: none;
-    box-shadow: none;
-    background: none;
+    padding: 10%;
+    width: 176%;
+    border-radius: 10px;
   }
   .second-parg-box ul {
     display: none;
   }
   .thirt-parg-box {
     margin-top: 3%;
-    border-style: none;
-    box-shadow: none;
-    background: none;
+    padding: 10%;
+    width: 176%;
+    border-radius: 10px;
   }
 
   #body > div .article {
@@ -555,13 +512,13 @@ a:hover {
     color: #252525;
     line-height: 24px;
     margin: 1px;
+    margin-top: 12px;
     padding: 0;
     width: 145%;
   }
   #body > div .article p {
-    margin: 0 -20% 30px;
-    width: 200%;
-    text-align: center;
+    margin: 0 -2% 30px;
+    width: 100%;
   }
   #footer {
     background: #5291f0;
