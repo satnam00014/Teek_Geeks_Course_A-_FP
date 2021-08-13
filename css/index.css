@@ -207,6 +207,14 @@ footer{
     .upper_section .centered {
         font-size:3em;
       }
+      .indicators span{
+        width        : 10px;
+        height       : 10px;
+      }
+      .slider-box{
+          width: 85%;
+          margin: auto;
+      }
 }
 @media screen and (max-width:650px) {
     .places_section .place{
@@ -218,6 +226,11 @@ footer{
     .upper_section .centered {
         font-size:2em;
       }
+      
+      .slider-box{
+        width: 95%;
+        margin: auto;
+    }
     
 }
 @media screen and (max-width:450px) {
