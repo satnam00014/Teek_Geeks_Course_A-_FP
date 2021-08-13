@@ -216,55 +216,7 @@ p a:hover {
   text-indent: -99999px;
   width: 44px;
 }
-.navbar {
-  box-sizing: border-box;
-}
-nav {
-  background: cornflowerblue;
-  height: 80px;
-}
-label.logo {
-  color: white;
-  font-size: 2em;
-  line-height: 80px;
-  padding: 0 100px;
-  font-weight: bold;
-}
-nav ul {
-  list-style: none;
-  float: right;
-  margin-right: 20px;
-}
-nav ul li {
-  display: inline-block;
-  line-height: 80px;
-  margin: 0 5px;
-}
-nav ul li a {
-  text-decoration: none;
-  color: white;
-  padding: 7px 14px;
-  border-radius: 3px;
-  font-size: 17px;
-  text-transform: uppercase;
-}
-a.active,
-a:hover {
-  background: rgb(57, 119, 233);
-  transition: 0.5s;
-}
-
-#check {
-  display: none;
-}
 @media screen and (max-width: 952px) {
-  label.logo {
-    font-size: 1em;
-    padding-left: 50px;
-  }
-  nav ul li a {
-    font-size: 16px;
-  }
   .first-parg-box {
     margin-top: 3%;
     border-style: none;
@@ -283,6 +235,9 @@ a:hover {
     box-shadow: none;
     background: none;
   }
+  nav .checkbtn{
+    display: block;
+}
 }
 
 @media screen and (max-width: 600px) {
@@ -347,17 +302,6 @@ a:hover {
     left: -100%;
     text-align: center;
     transition: all 0.5s;
-  }
-  nav ul li {
-    display: block;
-    margin: 50px 0;
-    line-height: 30px;
-  }
-  nav ul li a {
-    font-size: 20px;
-  }
-  #check:checked ~ ul {
-    left: 0;
   }
   #header {
     padding: 20px 0;

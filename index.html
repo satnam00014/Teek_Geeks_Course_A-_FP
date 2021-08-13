@@ -1,0 +1,213 @@
+<!DOCTYPE Html>
+<html>
+<head>
+    <title>Home</title>
+<link rel="stylesheet" href="css/navbar.css">
+<link rel="icon" href="media/logo.jpg">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<link rel="stylesheet" href="css/index.css">
+	<style type="text/css">
+		.navi{
+			padding : 20px;
+			color : white;
+			font-family: monospace;
+			font-size : 2em;
+			text-align : right;
+		}
+		.navi_main{
+			background-color : #00bcd4;
+			height : 7%;
+			width : 100%;
+			position : absolute;
+			top : 0px;
+			left: 0px;
+		}
+		.nav_link:hover{
+			background-color: #e91e63;
+			cursor : pointer;
+  			transform: translate(100px, 200px);
+  			transition : all 0.3s ease;
+
+		}
+		#parel{
+			background-image: url("media/purple_bg.jpeg");
+			background-attachment: fixed;
+			background-size:cover;
+			padding: 0.5%;
+		}
+		#college{
+			height: 770px;
+			background-size: cover;
+			width: 100%;
+			position: relative;
+			top: 70%;
+			background-image: url(media/index_background.jpg);
+			background-attachment: fixed;
+
+		}
+		
+		.college_text{
+			color: white;
+			font-size: 4em;
+			width: 100%;
+			text-align: center;
+			font-weight: bold;
+			float: left;
+			font-family: monospace;
+			position: absolute;
+			top: 30px;
+
+		}
+		.college_text1{
+			color: white;
+			font-size: 4em;
+			width: 100%;
+			text-align: center;
+			font-weight: bold;
+			float: left;
+			font-family: monospace;
+			position: absolute;
+			top: 300px;
+
+		}
+
+	</style>
+	</head>
+	<body id="mainbody">
+        <div class="navbar">
+            <nav>
+                <input type="checkbox" id="check" onclick="preventScroll()">
+                <label for="check" class="checkbtn">
+                    <i class="fas fa-bars"></i>
+                </label>
+                <a href="#">
+                    <img src="media/logo.jpg" alt="Home" class="logo">
+                </a>
+                <label class="logo">Courses A+</label>
+                <ul>
+                    <li><a class = "active" href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+
+<div id="parel">
+	<div class="slider-box">
+        <div id="slider">
+            <img src="media/slide1.jpg" alt="">
+            <img src="media/slide2.jpg" alt="">
+            <img src="media/slide3.jpg" alt="">
+            <img src="media/slide4.jpg" alt="">
+        </div>
+        <div class="indicators">
+            <span id="btn1" class="active"></span>
+            <span id="btn2"></span>
+            <span id="btn3"></span>
+            <span id="btn4"></span>
+        </div>
+    </div>
+
+</div>
+<div id="college"><div class="college_text">Number of students<br><br>4000</div><div class="college_text1">Number of students<br><br>4000</div></div>
+
+    <div class="places_section">
+        <div class="place">
+            <img src="media/slide1.jpg" alt="trade">
+            <p>
+                Graduate job-ready through practical learning. We take pride in your student satisfaction. From teacher quality, to campus experience, to future employability, well make sure your time at Global Group of Institutes hit the high notes.
+
+            </p>
+
+   </div>
+           <div class="place">
+            <img src="media/slide2.jpg" alt="trade">
+            <p>
+                Graduate job-ready through practical learning. We take pride in your student satisfaction. From teacher quality, to campus experience, to future employability, well make sure your time at Global Group of Institutes hit the high notes.
+
+            </p>
+
+   </div>
+           <div class="place">
+            <img src="media/slide3.jpg" alt="trade">
+            <p>
+                There are loads of upcoming opportunities to attend social and academic events, make new friends and feel confident about embarking on a new and exciting journey!<br><br>
+
+            </p>
+
+   </div>
+              <div class="place">
+            <img src="media/slide4.jpg" alt="trade">
+            <p>
+                Graduate job-ready through practical learning. We take pride in your student satisfaction. From teacher quality, to campus experience, to future employability, well make sure your time at Global Group of Institutes hit the high notes.
+
+            </p>
+        </div>
+        </div>
+    
+    <script>
+
+        var slide = document.getElementById("slider");
+        var btn1 = document.getElementById('btn1');
+        var btn2 = document.getElementById('btn2');
+        var btn3 = document.getElementById('btn3');
+        var btn4 = document.getElementById('btn4');
+
+        btn1.onclick = function () {
+            slide.style.transform = "translateX(0px)";
+            btn1.classList.add('active');
+            btn2.classList.remove('active');
+            btn3.classList.remove('active');
+            btn4.classList.remive('active');
+        };
+        btn2.onclick = function () {
+            slide.style.transform = "translateX(-100%)";
+            btn1.classList.remove('active');
+            btn2.classList.add('active');
+            btn3.classList.remove('active');
+            btn4.classList.remove('active');
+        };
+        btn3.onclick = function () {
+            slide.style.transform = "translateX(-200%)";
+            btn1.classList.remove('active');
+            btn2.classList.remove('active');
+            btn3.classList.add('active');
+            btn4.classList.remove('active');
+        };
+        btn4.onclick = function () {
+            slide.style.transform = "translateX(-300%)";
+            btn1.classList.remove('active');
+            btn2.classList.remove('active');
+            btn3.classList.remove('active');
+            btn4.classList.add('active');
+        };
+
+
+    </script>
+
+<footer>
+    &copy; Copyright 2021. All Rights reserved. <br />
+    <script>
+        const navButton = document.getElementById("check");
+        const body = document.getElementById("mainbody");
+
+        const preventScroll = function (e) {
+            console.log("This is sample")
+            console.log(navButton.checked)
+            if (navButton.checked) {
+                // Disable scroll
+                body.style.overflow = "hidden";
+                body.style.position = "fixed";
+            } else {
+                // Enable scroll
+                body.style.overflow = "auto";
+                body.style.position = "static";
+            }
+        };
+    </script>
+</footer>
+</body>
+</html
