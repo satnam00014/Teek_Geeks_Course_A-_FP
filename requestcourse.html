@@ -38,19 +38,6 @@
                 request.onsuccess = function(event) {
                     db = request.result;
                     console.log("success: "+ db);
-                    var objectStore = db.transaction("userData").objectStore("userData");
-                    var outputValue = "" 
-                    objectStore.openCursor().onsuccess = function(event) {
-                        var cursor = event.target.result;
-                        if (cursor) {
-                            if(cursor.value.keydata === id){
-                                outputValue = outputValue + "Fathername for student " + cursor.value.firstname + " is " + cursor.value.fathername + "<br>"                                  
-                                console.log(outputValue)
-                                document.getElementById("result").innerHTML = outputValue  
-                            }
-                            cursor.continue();
-                        }   
-                    }
                 };
                 
                 request.onupgradeneeded = function(event) {
@@ -258,7 +245,6 @@
                 .add(data);
                 
                 request.onsuccess = function(event) {
-                    readAll()
                 }
 
                 request.onerror = function(event) {
